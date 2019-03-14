@@ -1,0 +1,6 @@
+framework module GJHGallop {
+  umbrella header "GJHGallop-umbrella.h"
+
+  export *
+  module * { export * }
+}

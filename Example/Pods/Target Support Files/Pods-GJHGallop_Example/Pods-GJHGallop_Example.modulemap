@@ -1,0 +1,6 @@
+framework module Pods_GJHGallop_Example {
+  umbrella header "Pods-GJHGallop_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
