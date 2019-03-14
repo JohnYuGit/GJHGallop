@@ -105,7 +105,10 @@ const CGFloat kDuration = 0.3f;
     }
     CGRect destinationRect = [self calculateDestinationFrameWithSize:self.imageModel.thumbnailImage.size];
     SDWebImageManager* manager = [SDWebImageManager sharedManager];
-    BOOL isImageCached = [manager cacheKeyForURL:self.imageModel.HDURL];
+    BOOL isImageCached = [manager cacheKeyForURL:self.imageModel.HDURL].length > 0;
+    if (!isImageCached) {
+        isImageCached = [manager.imageCache diskImageDataExistsWithKey:self.imageModel.HDURL.absoluteString];
+    }
     __weak typeof(self) weakSelf = self;
     //还未下载的图片
     if (!isImageCached) {
