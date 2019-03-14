@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GJHGallop'
-  s.version          = '0.0.7'
+  s.version          = '0.0.8'
   s.summary          = 'A short description of GJHGallop.'
 
 # This description is used to generate tags and improve search results.
@@ -40,8 +40,8 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'SDWebImage'
   
-  # s.libraries = 'xml2'
+  s.libraries = 'xml2'
   s.requires_arc = true
   
-  # s.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
+  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
 end
