@@ -1,7 +1,7 @@
 {
   "name": "GJHGallop",
-  "version": "0.0.11",
-  "summary": "A short description of GJHGallop.",
+  "version": "0.0.12",
+  "summary": "GJHGallop is add pods from Gallop",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/JohnYuGit/GJHGallop",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/JohnYuGit/GJHGallop.git",
-    "tag": "0.0.11"
+    "tag": "0.0.12"
   },
   "platforms": {
     "ios": "8.0"
