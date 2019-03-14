@@ -23,6 +23,11 @@
  */
 
 #import "CALayer+WebCacheOperation.h"
+#if __has_include(<SDWebImage/SDWebImageManager.h>)
+    #import <SDWebImage/SDWebImageManager.h>
+#else
+    #import "SDWebImageManager.h"
+#endif
 #import <objc/runtime.h>
 
 

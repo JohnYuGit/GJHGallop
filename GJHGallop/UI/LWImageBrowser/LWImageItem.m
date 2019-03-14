@@ -24,6 +24,13 @@
 
 #import "LWImageItem.h"
 #import "GallopUtils.h"
+#if __has_include(<SDWebImage/SDWebImageManager.h>)
+    #import <SDWebImage/SDWebImageManager.h>
+    #import <SDWebImage/UIImageView+WebCache.h>
+#else
+    #import "SDWebImageManager.h"
+    #import "UIImageView+WebCache.h"
+#endif
 
 
 const CGFloat kMaximumZoomScale = 3.0f;

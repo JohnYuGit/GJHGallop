@@ -24,8 +24,6 @@
 
 #import <UIKit/UIKit.h>
 #import "LWImageBrowserModel.h"
-#import "SDWebImageManager.h"
-#import "UIImageView+WebCache.h"
 
 
 @protocol LWImageItemEventDelegate <NSObject>

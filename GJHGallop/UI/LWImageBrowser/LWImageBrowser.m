@@ -31,6 +31,12 @@
 #import "LWAlertView.h"
 #import "GallopUtils.h"
 
+#if __has_include(<SDWebImage/SDWebImageManager.h>)
+    #import <SDWebImage/SDWebImageManager.h>
+#else
+    #import "SDWebImageManager.h"
+#endif
+
 #define kPageControlHeight 40.0f
 #define kImageBrowserWidth ([UIScreen mainScreen].bounds.size.width + 10.0f)
 #define kImageBrowserHeight [UIScreen mainScreen].bounds.size.height

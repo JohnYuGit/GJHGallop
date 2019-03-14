@@ -23,8 +23,14 @@
  */
 
 #import <QuartzCore/QuartzCore.h>
-#import "SDWebImageCompat.h"
-#import "SDWebImageManager.h"
+#if __has_include(<SDWebImage/SDWebImageManager.h>)
+    #import <SDWebImage/SDWebImageCompat.h>
+    #import <SDWebImage/SDWebImageManager.h>
+#else
+    #import "SDWebImageCompat.h"
+    #import "SDWebImageManager.h"
+#endif
+
 
 
 @interface CALayer(WebCache)

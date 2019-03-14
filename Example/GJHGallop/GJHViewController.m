@@ -7,6 +7,7 @@
 //
 
 #import "GJHViewController.h"
+#import <GJHGallop/Gallop.h>
 
 @interface GJHViewController ()
 
