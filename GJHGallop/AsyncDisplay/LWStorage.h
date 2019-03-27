@@ -28,6 +28,8 @@
 
 //*** LWTextStorage和LWImageStorage的父类  ***//
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface LWStorage : NSObject<NSCopying,NSCoding>
 
 @property (nullable,nonatomic,copy) NSString* identifier;
@@ -63,6 +65,8 @@
 
 @property (nonatomic,assign) UIEdgeInsets htmlLayoutEdgeInsets;
 
-- (id)initWithIdentifier:(NSString *)identifier;
+- (id)initWithIdentifier:(nullable NSString *)identifier;
 
 @end
+
+NS_ASSUME_NONNULL_END

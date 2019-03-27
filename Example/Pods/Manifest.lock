@@ -1,5 +1,5 @@
 PODS:
-  - GJHGallop (0.0.12):
+  - GJHGallop (0.1.0):
     - SDWebImage
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GJHGallop: 07a5d7cdb77d3ded4b69aa081ca12b71d5b7b4d4
+  GJHGallop: 95b33e85c6e8e4d0d3d29fdfe69808a1900c7a0e
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
 
 PODFILE CHECKSUM: 50b4496cc01629cb3cd3f9c8f2a93ecbc58dadfe

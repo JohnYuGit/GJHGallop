@@ -25,18 +25,19 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class LWStorage;
 @class LWConstraint;
 @class LWConstraintMarginObject;
 @class LWConstraintEqualObject;
 
-
-typedef LWConstraint* (^Margin)(CGFloat value);
-typedef LWConstraint* (^Length)(CGFloat value);
-typedef LWConstraint* (^Center)(CGPoint center);
-typedef LWConstraint* (^EqualToStorage)(LWStorage* storage);
-typedef LWConstraint* (^EdgeInsetsToContainer)(UIEdgeInsets insets);
-typedef LWConstraint* (^MarginToStorage)(LWStorage* storage, CGFloat value);
+typedef LWConstraint* _Nullable (^Margin)(CGFloat value);
+typedef LWConstraint* _Nullable (^Length)(CGFloat value);
+typedef LWConstraint* _Nullable (^Center)(CGPoint center);
+typedef LWConstraint* _Nullable (^EqualToStorage)(LWStorage* storage);
+typedef LWConstraint* _Nullable (^EdgeInsetsToContainer)(UIEdgeInsets insets);
+typedef LWConstraint* _Nullable (^MarginToStorage)(LWStorage* storage, CGFloat value);
 
 
 
@@ -176,3 +177,5 @@ typedef LWConstraint* (^MarginToStorage)(LWStorage* storage, CGFloat value);
 @property (nullable,nonatomic,strong) LWStorage* referenceStorage;
 
 @end
+
+NS_ASSUME_NONNULL_END

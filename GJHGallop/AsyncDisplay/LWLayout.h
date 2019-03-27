@@ -42,6 +42,4 @@
 //*** 指定一个底部间距，计算LWAsncDisplayView的高度 ****//
 - (CGFloat)suggestHeightWithBottomMargin:(CGFloat)bottomMargin;
 
-
-
 @end
