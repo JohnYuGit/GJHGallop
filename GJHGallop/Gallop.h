@@ -25,14 +25,21 @@
 #ifndef Gallop_h
 #define Gallop_h
 
-#import "LWAsyncDisplayView.h"
-#import "LWHTMLDisplayView.h"
-#import "LWTextLayout.h"
-#import "GallopUtils.h"
 #import "NSMutableAttributedString+Gallop.h"
+
+#import "GallopUtils.h"
 #import "LWConstraintManager.h"
+
+#import "LWTextLayout.h"
+#import "LWHTMLLayout.h"
+
 #import "LWStorage+Constraint.h"
 #import "LWStorageBuilder.h"
-#import "LWHTMLLayout.h"
+
+#import "LWAsyncDisplayView.h"
+#import "LWHTMLDisplayView.h"
+#import "LWImageBrowser.h"
+#import "LWAlertView.h"
+#import "LWTextParser.h"
 
 #endif /* Gallop_h */

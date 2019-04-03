@@ -24,13 +24,7 @@
 
 #import "LWImageItem.h"
 #import "GallopUtils.h"
-#if __has_include(<SDWebImage/SDWebImageManager.h>)
-    #import <SDWebImage/SDWebImageManager.h>
-    #import <SDWebImage/UIImageView+WebCache.h>
-#else
-    #import "SDWebImageManager.h"
-    #import "UIImageView+WebCache.h"
-#endif
+#import "CALayer+WebCache.h"
 
 
 const CGFloat kMaximumZoomScale = 3.0f;
@@ -104,10 +98,14 @@ const CGFloat kDuration = 0.3f;
         return;
     }
     CGRect destinationRect = [self calculateDestinationFrameWithSize:self.imageModel.thumbnailImage.size];
-    SDWebImageManager* manager = [SDWebImageManager sharedManager];
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
     BOOL isImageCached = [manager cacheKeyForURL:self.imageModel.HDURL].length > 0;
     if (!isImageCached) {
-        isImageCached = [manager.imageCache diskImageDataExistsWithKey:self.imageModel.HDURL.absoluteString];
+        SDImageCache *cacheMgr = manager.imageCache;
+        if (!cacheMgr) {
+            cacheMgr = [SDImageCache sharedImageCache];
+        }
+        isImageCached = [cacheMgr diskImageDataExistsWithKey:self.imageModel.HDURL.absoluteString];
     }
     __weak typeof(self) weakSelf = self;
     //还未下载的图片

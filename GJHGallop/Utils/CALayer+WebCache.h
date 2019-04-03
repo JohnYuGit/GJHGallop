@@ -25,10 +25,18 @@
 #import <QuartzCore/QuartzCore.h>
 #if __has_include(<SDWebImage/SDWebImageManager.h>)
     #import <SDWebImage/SDWebImageCompat.h>
+    #import <SDWebImage/SDImageCache.h>
     #import <SDWebImage/SDWebImageManager.h>
+    #import <SDWebImage/SDWebImageDownloader.h>
+    #import <SDWebImage/SDWebImageError.h>
+    #import <SDWebImage/UIImageView+WebCache.h>
 #else
     #import "SDWebImageCompat.h"
+    #import "SDImageCache.h"
     #import "SDWebImageManager.h"
+    #import "SDWebImageDownloader.h"
+    #import "SDWebImageError.h"
+    #import "UIImageView+WebCache.h"
 #endif
 
 
@@ -42,7 +50,7 @@
  * Note that because of the limitations of categories this property can get out of sync
  * if you use sd_setImage: directly.
  */
-- (NSURL *)sd_imageURL;
+- (nullable NSURL *)sd_imageURL;
 
 /**
  * Set the imageView `image` with an `url`.
@@ -51,7 +59,7 @@
  *
  * @param url The url for the image.
  */
-- (void)sd_setImageWithURL:(NSURL *)url;
+- (void)sd_setImageWithURL:(nullable NSURL *)url;
 
 /**
  * Set the imageView `image` with an `url` and a placeholder.
@@ -62,7 +70,8 @@
  * @param placeholder The image to be set initially, until the image request finishes.
  * @see sd_setImageWithURL:placeholderImage:options:
  */
-- (void)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder;
+- (void)sd_setImageWithURL:(nullable NSURL *)url
+          placeholderImage:(nullable UIImage *)placeholder;
 
 /**
  * Set the imageView `image` with an `url`, placeholder and custom options.
@@ -73,7 +82,9 @@
  * @param placeholder The image to be set initially, until the image request finishes.
  * @param options     The options to use when downloading the image. @see SDWebImageOptions for the possible values.
  */
-- (void)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options;
+- (void)sd_setImageWithURL:(nullable NSURL *)url
+          placeholderImage:(nullable UIImage *)placeholder
+                   options:(SDWebImageOptions)options;
 
 /**
  * Set the imageView `image` with an `url`.
@@ -87,7 +98,8 @@
  *                       indicating if the image was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
  */
-- (void)sd_setImageWithURL:(NSURL *)url completed:(SDExternalCompletionBlock)completedBlock;
+- (void)sd_setImageWithURL:(nullable NSURL *)url
+                 completed:(nullable SDExternalCompletionBlock)completedBlock;
 
 /**
  * Set the imageView `image` with an `url`, placeholder.
@@ -102,7 +114,9 @@
  *                       indicating if the image was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
  */
-- (void)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completed:(SDExternalCompletionBlock)completedBlock;
+- (void)sd_setImageWithURL:(nullable NSURL *)url
+          placeholderImage:(nullable UIImage *)placeholder
+                 completed:(nullable SDExternalCompletionBlock)completedBlock;
 
 /**
  * Set the imageView `image` with an `url`, placeholder and custom options.
@@ -118,7 +132,10 @@
  *                       indicating if the image was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
  */
-- (void)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options completed:(SDExternalCompletionBlock)completedBlock;
+- (void)sd_setImageWithURL:(nullable NSURL *)url
+          placeholderImage:(nullable UIImage *)placeholder
+                   options:(SDWebImageOptions)options
+                 completed:(nullable SDExternalCompletionBlock)completedBlock;
 
 /**
  * Set the imageView `image` with an `url`, placeholder and custom options.
@@ -135,9 +152,11 @@
  *                       indicating if the image was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
  */
-- (void)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options
-                  progress:(SDWebImageDownloaderProgressBlock)progressBlock
-                 completed:(SDExternalCompletionBlock)completedBlock;
+- (void)sd_setImageWithURL:(nullable NSURL *)url
+          placeholderImage:(nullable UIImage *)placeholder
+                   options:(SDWebImageOptions)options
+                  progress:(nullable SDWebImageDownloaderProgressBlock)progressBlock
+                 completed:(nullable SDExternalCompletionBlock)completedBlock;
 /**
  * Set the imageView `image` with an `url` and optionally a placeholder image.
  *
@@ -153,11 +172,11 @@
  *                       indicating if the image was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
  */
-- (void)sd_setImageWithPreviousCachedImageWithURL:(NSURL *)url
-                                 placeholderImage:(UIImage *)placeholder
+- (void)sd_setImageWithPreviousCachedImageWithURL:(nullable NSURL *)url
+                                 placeholderImage:(nullable UIImage *)placeholder
                                           options:(SDWebImageOptions)options
-                                         progress:(SDWebImageDownloaderProgressBlock)progressBlock
-                                        completed:(SDExternalCompletionBlock)completedBlock;
+                                         progress:(nullable SDWebImageDownloaderProgressBlock)progressBlock
+                                        completed:(nullable SDExternalCompletionBlock)completedBlock;
 
 
 /**

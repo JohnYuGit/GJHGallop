@@ -1,9 +1,9 @@
 PODS:
   - GJHGallop (0.1.0):
     - SDWebImage
-  - SDWebImage (4.4.6):
-    - SDWebImage/Core (= 4.4.6)
-  - SDWebImage/Core (4.4.6)
+  - SDWebImage (5.0.0):
+    - SDWebImage/Core (= 5.0.0)
+  - SDWebImage/Core (5.0.0)
 
 DEPENDENCIES:
   - GJHGallop (from `../`)
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   GJHGallop: 95b33e85c6e8e4d0d3d29fdfe69808a1900c7a0e
-  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
 
 PODFILE CHECKSUM: 50b4496cc01629cb3cd3f9c8f2a93ecbc58dadfe
 
